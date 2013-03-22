@@ -6,11 +6,11 @@ using System.Security;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("MaxMelcher.SPSignalR")]
+[assembly: AssemblyTitle("MaxMelcher.SignalR2")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("MaxMelcher.SPSignalR")]
+[assembly: AssemblyProduct("MaxMelcher.SignalR2")]
 [assembly: AssemblyCopyright("Copyright ©  2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -21,7 +21,7 @@ using System.Security;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("fbff5660-4a22-4148-8165-a627f6e6ea12")]
+[assembly: Guid("c5b621b5-628a-40ba-8a6d-e354b035a3c2")]
 
 // Version information for an assembly consists of the following four values:
 //

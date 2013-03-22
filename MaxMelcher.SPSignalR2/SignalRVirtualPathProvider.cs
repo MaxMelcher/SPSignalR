@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Web.Hosting;
 
-namespace MaxMelcher.SPSignalR
+namespace MaxMelcher.SignalR2
 {
     public class SignalRVirtualPathProvider : VirtualPathProvider
     {

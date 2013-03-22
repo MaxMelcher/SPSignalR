@@ -1,17 +1,10 @@
-﻿using System;
-using System.Diagnostics;
-using System.Net;
-using System.Threading;
-using System.Web;
+﻿using System.Web;
 using System.Web.Hosting;
 using System.Web.Routing;
 using Microsoft.AspNet.SignalR;
-using Microsoft.AspNet.SignalR.Hubs;
-using Microsoft.AspNet.SignalR.SystemWeb;
-using Microsoft.AspNet.SignalR.SystemWeb.Infrastructure;
 using Microsoft.SharePoint.Administration;
 
-namespace MaxMelcher.SPSignalR
+namespace MaxMelcher.SignalR2
 {
     public class SignalRModule : IHttpModule
     {

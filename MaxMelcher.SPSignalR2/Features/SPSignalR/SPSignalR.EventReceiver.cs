@@ -4,7 +4,7 @@ using System.Security.Permissions;
 using Microsoft.SharePoint;
 using Microsoft.SharePoint.Administration;
 
-namespace MaxMelcher.SPSignalR.Features.SPSignalR
+namespace MaxMelcher.SignalR2.Features.SPSignalR
 {
     /// <summary>
     /// This class handles events raised during feature activation, deactivation, installation, uninstallation, and upgrade.
@@ -13,34 +13,20 @@ namespace MaxMelcher.SPSignalR.Features.SPSignalR
     /// The GUID attached to this class may be used during packaging and should not be modified.
     /// </remarks>
 
-    [Guid("dc1569c1-6a96-4690-a047-49ecf027f73c")]
+    [Guid("25cdabbc-5201-4e78-b087-6a55f40ca1d2")]
     public class SPSignalREventReceiver : SPFeatureReceiver
     {
-        // Uncomment the method below to handle the event raised after a feature has been activated.
-
-        //public override void FeatureActivated(SPFeatureReceiverProperties properties)
-        //{
-        //}
-
-
-        // Uncomment the method below to handle the event raised before a feature is deactivated.
-
-        //public override void FeatureDeactivating(SPFeatureReceiverProperties properties)
-        //{
-        //}
-
-
-
-        public override void FeatureInstalled(SPFeatureReceiverProperties properties)
+        public override void FeatureActivated(SPFeatureReceiverProperties properties)
         {
             SPDiagnosticsService.Local.WriteTrace(0,
-                                        new SPDiagnosticsCategory(
-                                            "MaxMelcher.SPSignalR",
-                                            TraceSeverity.Medium,
-                                            EventSeverity.Information),
-                                            TraceSeverity.Medium,
-                                            string.Format("Feature: Registering HTTPModule for MaxMelcher.SPSignalR"),
-                                            null);
+                                                  new SPDiagnosticsCategory(
+                                                      "MaxMelcher.SPSignalR",
+                                                      TraceSeverity.Medium,
+                                                      EventSeverity.Information),
+                                                  TraceSeverity.Medium,
+                                                  string.Format(
+                                                      "Feature: Registering HTTPModule for MaxMelcher.SPSignalR"),
+                                                  null);
             RegisterHttpModule(properties);
         }
 
@@ -77,20 +63,21 @@ namespace MaxMelcher.SPSignalR.Features.SPSignalR
              * to be resistent to refactoring we use reflection to identity the module, 
              * so in case somebody changes the class name the web.config entry will be still valid
              */
-            webConfigModification.Value = String.Format("<add name=\"{0}\" type=\"{1}\" />", typeof(SignalRModule).Name, typeof(SignalRModule).AssemblyQualifiedName);
+            webConfigModification.Value = String.Format("<add name=\"{0}\" type=\"{1}\" />", typeof(SignalRModule).Name,
+                                                        typeof(SignalRModule).AssemblyQualifiedName);
             return webConfigModification;
         }
 
-        public override void FeatureUninstalling(SPFeatureReceiverProperties properties)
+        public override void FeatureDeactivating(SPFeatureReceiverProperties properties)
         {
             SPDiagnosticsService.Local.WriteTrace(0,
-                                        new SPDiagnosticsCategory(
-                                            "MaxMelcher.SPSignalR",
-                                            TraceSeverity.Medium,
-                                            EventSeverity.Information),
-                                            TraceSeverity.Medium,
-                                            string.Format("Feature: Removing HTTPModule for MaxMelcher.SPSignalR"),
-                                            null);
+                                                  new SPDiagnosticsCategory(
+                                                      "MaxMelcher.SPSignalR",
+                                                      TraceSeverity.Medium,
+                                                      EventSeverity.Information),
+                                                  TraceSeverity.Medium,
+                                                  string.Format("Feature: Removing HTTPModule for MaxMelcher.SPSignalR"),
+                                                  null);
             UnregisterHttpModule(properties);
         }
 
@@ -106,8 +93,8 @@ namespace MaxMelcher.SPSignalR.Features.SPSignalR
                 int numberOfModifications = contentService.WebConfigModifications.Count;
 
                 /*
-                 * Iterate over all WebConfigModification and delete only those we have created
-                 */
+             * Iterate over all WebConfigModification and delete only those we have created
+             */
                 for (int i = numberOfModifications - 1; i >= 0; i--)
                 {
                     SPWebConfigModification currentModifiction = contentService.WebConfigModifications[i];
@@ -119,8 +106,8 @@ namespace MaxMelcher.SPSignalR.Features.SPSignalR
                 }
 
                 /*
-                 * Update only if we have something deleted
-                 */
+             * Update only if we have something deleted
+             */
                 if (numberOfModifications > contentService.WebConfigModifications.Count)
                 {
                     contentService.Update();
@@ -129,11 +116,5 @@ namespace MaxMelcher.SPSignalR.Features.SPSignalR
 
             });
         }
-
-        // Uncomment the method below to handle the event raised when a feature is upgrading.
-
-        //public override void FeatureUpgrading(SPFeatureReceiverProperties properties, string upgradeActionName, System.Collections.Generic.IDictionary<string, string> parameters)
-        //{
-        //}
     }
 }
