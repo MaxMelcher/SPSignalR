@@ -7,8 +7,8 @@
     <ProjectGuid>{C5B621B5-628A-40BA-8A6D-E354B035A3C2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MaxMelcher.SignalR2</RootNamespace>
-    <AssemblyName>MaxMelcher.SignalR2</AssemblyName>
+    <RootNamespace>MaxMelcher.SignalR</RootNamespace>
+    <AssemblyName>MaxMelcher.SignalR</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <TargetOfficeVersion>15.0</TargetOfficeVersion>
     <FileAlignment>512</FileAlignment>
@@ -41,7 +41,7 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>MaxMelcher.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.AspNet.SignalR.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -93,7 +93,8 @@
     <None Include="Features\SPSignalR\SPSignalR.feature">
       <FeatureId>{cc4134db-9878-478c-9841-ba88bfe14258}</FeatureId>
     </None>
-    <None Include="key.snk" />
+    <None Include="MaxMelcher.pfx" />
+    <None Include="MaxMelcher.SPSignalR.licenseheader" />
     <None Include="packages.config" />
     <None Include="Package\Package.package">
       <PackageId>{ad40a593-5102-47e0-8c9c-388dc6f8310e}</PackageId>

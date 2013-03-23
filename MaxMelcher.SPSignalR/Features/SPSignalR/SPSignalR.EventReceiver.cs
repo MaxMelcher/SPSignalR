@@ -1,13 +1,23 @@
+/*
+*  Copyright (c) 2013 Maximilian Melcher // http://melcher.it 
+*
+*  Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+* 
+*  The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+* 
+*  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+*/
+
 using System;
 using System.Runtime.InteropServices;
 using System.Security.Permissions;
 using Microsoft.SharePoint;
 using Microsoft.SharePoint.Administration;
 
-namespace MaxMelcher.SignalR2.Features.SPSignalR
+namespace MaxMelcher.SignalR.Features.SPSignalR
 {
     /// <summary>
-    /// This class handles events raised during feature activation, deactivation, installation, uninstallation, and upgrade.
+    ///This class registers a http module in the web.config of the webapplication. 
     /// </summary>
     /// <remarks>
     /// The GUID attached to this class may be used during packaging and should not be modified.
@@ -45,9 +55,9 @@ namespace MaxMelcher.SignalR2.Features.SPSignalR
         }
 
         /// <summary>
-        /// Create the SPWebConfigModification object for the download tracking Http Module
+        /// Create the SPWebConfigModification object for the signalr module
         /// </summary>
-        /// <returns>SPWebConfigModification object for adding the download tracking http module to the web.config</returns>
+        /// <returns>SPWebConfigModification object for the http module to the web.config</returns>
         private SPWebConfigModification CreateWebModificationObject()
         {
             string name = String.Format("add[@name=\"{0}\"]", typeof(SignalRModule).Name);
@@ -59,10 +69,7 @@ namespace MaxMelcher.SignalR2.Features.SPSignalR
             webConfigModification.Sequence = 0;
             webConfigModification.Type = SPWebConfigModification.SPWebConfigModificationType.EnsureChildNode;
 
-            /*
-             * to be resistent to refactoring we use reflection to identity the module, 
-             * so in case somebody changes the class name the web.config entry will be still valid
-             */
+            //reflection safe
             webConfigModification.Value = String.Format("<add name=\"{0}\" type=\"{1}\" />", typeof(SignalRModule).Name,
                                                         typeof(SignalRModule).AssemblyQualifiedName);
             return webConfigModification;
@@ -92,9 +99,7 @@ namespace MaxMelcher.SignalR2.Features.SPSignalR
 
                 int numberOfModifications = contentService.WebConfigModifications.Count;
 
-                /*
-             * Iterate over all WebConfigModification and delete only those we have created
-             */
+                //Iterate over all WebConfigModification and delete only those we have created
                 for (int i = numberOfModifications - 1; i >= 0; i--)
                 {
                     SPWebConfigModification currentModifiction = contentService.WebConfigModifications[i];
@@ -105,9 +110,7 @@ namespace MaxMelcher.SignalR2.Features.SPSignalR
                     }
                 }
 
-                /*
-             * Update only if we have something deleted
-             */
+                //Update only if we have something deleted
                 if (numberOfModifications > contentService.WebConfigModifications.Count)
                 {
                     contentService.Update();
