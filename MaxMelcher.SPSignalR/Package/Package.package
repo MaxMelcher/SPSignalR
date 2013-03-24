@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="ad40a593-5102-47e0-8c9c-388dc6f8310e" solutionId="ad40a593-5102-47e0-8c9c-388dc6f8310e" resetWebServer="false" sharePointProductVersion="15.0" name="MaxMelcher.SignalR2" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="ad40a593-5102-47e0-8c9c-388dc6f8310e" solutionId="ad40a593-5102-47e0-8c9c-388dc6f8310e" resetWebServer="false" sharePointProductVersion="15.0" name="MaxMelcher.SignalR" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
   <assemblies>
     <customAssembly location="Newtonsoft.Json.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll" />
     <customAssembly location="Owin.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="..\packages\Owin.1.0\lib\net40\Owin.dll" />
