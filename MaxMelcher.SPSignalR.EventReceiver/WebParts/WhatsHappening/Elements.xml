@@ -2,7 +2,7 @@
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/" >
   <Module Name="WhatsHappening" List="113" Url="_catalogs/wp">
     <File Path="WhatsHappening\WhatsHappening.webpart" Url="MaxMelcher.SPSignalR.EventReceiverExample_WhatsHappening.webpart" Type="GhostableInLibrary" >
-      <Property Name="Group" Value="Custom" />
+      <Property Name="Group" Value="SPSignalR" />
     </File>
   </Module>
 </Elements>

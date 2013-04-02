@@ -7,8 +7,8 @@
     </metaData>
     <data>
       <properties>
-        <property name="Title" type="string">MaxMelcher.SPSignalR.EventReceiverExample - WhatsHappening</property>
-        <property name="Description" type="string">My Visual Web Part</property>
+        <property name="Title" type="string">MaxMelcher.SPSignalR.EventReceiverExample - WhatsHappening WebPart</property>
+        <property name="Description" type="string">WebPart that shows what is changed in document libraries - in real-time!</property>
       </properties>
     </data>
   </webPart>
