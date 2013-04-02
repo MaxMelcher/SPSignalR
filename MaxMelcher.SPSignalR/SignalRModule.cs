@@ -58,6 +58,9 @@ namespace MaxMelcher.SignalR
                         EnableJavaScriptProxies = true
                     };
 
+                
+
+
                 RouteTable.Routes.MapHubs(hubConfiguration);
 
                 //register the custom VirtualPath provider that trims the starting ~ from the requested url.

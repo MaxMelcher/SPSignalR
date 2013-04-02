@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C5B621B5-628A-40BA-8A6D-E354B035A3C2}</ProjectGuid>
+    <ProjectGuid>{2BCA9798-D6F0-447A-B046-543681D00F3E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MaxMelcher.SignalR</RootNamespace>
-    <AssemblyName>MaxMelcher.SignalR</AssemblyName>
+    <RootNamespace>MaxMelcher.SPSignalR.EventReceiver</RootNamespace>
+    <AssemblyName>MaxMelcher.SPSignalR.EventReceiver</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <TargetOfficeVersion>15.0</TargetOfficeVersion>
     <FileAlignment>512</FileAlignment>
@@ -17,12 +17,12 @@
     <SandboxedSolution>False</SandboxedSolution>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
+    <ProjectMode>SharePointCustomization</ProjectMode>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
     <OldToolsVersion>4.0</OldToolsVersion>
-    <ProjectMode>SharePointCustomization</ProjectMode>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -69,35 +69,18 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.1.0.1\lib\net40\Microsoft.AspNet.SignalR.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.AspNet.SignalR.Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\packages\Microsoft.AspNet.SignalR.Owin.1.0.1\lib\net45\Microsoft.AspNet.SignalR.Owin.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.AspNet.SignalR.SystemWeb, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\packages\Microsoft.AspNet.SignalR.SystemWeb.1.0.1\lib\net45\Microsoft.AspNet.SignalR.SystemWeb.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.1.0.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
-    </Reference>
+    <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.SharePoint.WorkflowActions, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL" />
-    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
-    </Reference>
     <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
@@ -105,32 +88,49 @@
     <Reference Include="Microsoft.SharePoint.Client.ServerRuntime" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Features\SPSignalR\SPSignalR.EventReceiver.cs">
-      <DependentUpon>SPSignalR.feature</DependentUpon>
+    <Compile Include="SignalR\DocLibHub.cs" />
+    <Compile Include="EventReceiver\WhatsHappeningEventReceiver\EventReceiver1.cs" />
+    <Compile Include="Features\AddAssemblyTag\AddAssemblyTag.EventReceiver.cs">
+      <DependentUpon>AddAssemblyTag.feature</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SignalRModule.cs" />
-    <Compile Include="SignalRVirtualPathProvider.cs" />
+    <Compile Include="WebParts\WhatsHappening\WhatsHappening.ascx.cs">
+      <DependentUpon>WhatsHappening.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebParts\WhatsHappening\WhatsHappening.ascx.g.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WhatsHappening.ascx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Features\SPSignalR\SPSignalR.feature">
-      <FeatureId>{cc4134db-9878-478c-9841-ba88bfe14258}</FeatureId>
+    <None Include="EventReceiver\WhatsHappeningEventReceiver\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{bbe73171-5acc-4f66-8a9e-db2ff484b3c5}</SharePointProjectItemId>
     </None>
-    <None Include="MaxMelcher.pfx" />
-    <None Include="MaxMelcher.SPSignalR.licenseheader" />
+    <None Include="Features\EnableEventReceiver\EnableEventReceiver.feature">
+      <FeatureId>{9a914975-7960-4c7e-98f0-09d4c45c52f9}</FeatureId>
+    </None>
+    <None Include="Features\AddAssemblyTag\AddAssemblyTag.feature">
+      <FeatureId>{555ace75-16d1-40d5-897a-2c3422385690}</FeatureId>
+    </None>
+    <None Include="Features\WebPart\WebPart.feature">
+      <FeatureId>{2f9a989c-3a5b-4f9b-8915-700a76425693}</FeatureId>
+    </None>
+    <None Include="Layouts\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{22ad0297-2c60-4fcf-9988-c9adf9c5c06c}</SharePointProjectItemId>
+    </None>
     <None Include="packages.config" />
     <None Include="Package\Package.package">
-      <PackageId>{ad40a593-5102-47e0-8c9c-388dc6f8310e}</PackageId>
+      <PackageId>{d5aee40a-af10-4958-9cf7-9af9defd6847}</PackageId>
     </None>
     <None Include="Package\Package.Template.xml">
       <DependentUpon>Package.package</DependentUpon>
     </None>
     <None Include="SPSignalR.pfx" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Features\SPSignalR\SPSignalR.Template.xml">
-      <DependentUpon>SPSignalR.feature</DependentUpon>
-    </Content>
+    <None Include="WebParts\WhatsHappening\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{725613dc-3b8d-41f2-83ad-f60c4d290292}</SharePointProjectItemId>
+    </None>
+    <None Include="WebParts\WhatsHappening\WhatsHappening.webpart" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">
@@ -148,6 +148,28 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="EventReceiver\WhatsHappeningEventReceiver\Elements.xml" />
+    <Content Include="Features\EnableEventReceiver\EnableEventReceiver.Template.xml">
+      <DependentUpon>EnableEventReceiver.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\AddAssemblyTag\AddAssemblyTag.Template.xml">
+      <DependentUpon>AddAssemblyTag.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\WebPart\WebPart.Template.xml">
+      <DependentUpon>WebPart.feature</DependentUpon>
+    </Content>
+    <Content Include="Scripts\jquery-1.6.4-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.6.4.js" />
+    <Content Include="Layouts\MaxMelcher.SPSignalR.EventReceiverExample\jquery-1.6.4.min.js" />
+    <Content Include="Scripts\jquery.signalR-1.0.1.js" />
+    <Content Include="Layouts\MaxMelcher.SPSignalR.EventReceiverExample\jquery.signalR-1.0.1.min.js" />
+    <Content Include="WebParts\WhatsHappening\Elements.xml" />
+    <Content Include="WebParts\WhatsHappening\WhatsHappening.ascx">
+      <Generator>SharePointWebPartCodeGenerator</Generator>
+      <LastGenOutput>WhatsHappening.ascx.g.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="d5aee40a-af10-4958-9cf7-9af9defd6847" solutionId="d5aee40a-af10-4958-9cf7-9af9defd6847" resetWebServer="false" sharePointProductVersion="15.0" name="MaxMelcher.SPSignalR.EventReceiver" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <features>
+    <featureReference itemId="9a914975-7960-4c7e-98f0-09d4c45c52f9" />
+    <featureReference itemId="555ace75-16d1-40d5-897a-2c3422385690" />
+    <featureReference itemId="2f9a989c-3a5b-4f9b-8915-700a76425693" />
+  </features>
+  <projectItems>
+    <projectItemReference itemId="22ad0297-2c60-4fcf-9988-c9adf9c5c06c" />
+  </projectItems>
+</package>
