@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaxMelcher.SPSignalR", "MaxMelcher.SPSignalR\MaxMelcher.SPSignalR.csproj", "{C5B621B5-628A-40BA-8A6D-E354B035A3C2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaxMelcher.SPSignalR.EventReceiverExample", "MaxMelcher.SPSignalR.EventReceiver\MaxMelcher.SPSignalR.EventReceiverExample.csproj", "{2BCA9798-D6F0-447A-B046-543681D00F3E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C5B621B5-628A-40BA-8A6D-E354B035A3C2} = {C5B621B5-628A-40BA-8A6D-E354B035A3C2}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

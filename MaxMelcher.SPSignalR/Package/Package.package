@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="ad40a593-5102-47e0-8c9c-388dc6f8310e" solutionId="ad40a593-5102-47e0-8c9c-388dc6f8310e" resetWebServer="false" sharePointProductVersion="15.0" name="MaxMelcher.SignalR" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
   <assemblies>
-    <customAssembly location="Newtonsoft.Json.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll" />
-    <customAssembly location="Owin.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="..\packages\Owin.1.0\lib\net40\Owin.dll" />
-    <customAssembly location="Microsoft.Owin.Host.SystemWeb.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="..\packages\Microsoft.Owin.Host.SystemWeb.1.0.0\lib\net40\Microsoft.Owin.Host.SystemWeb.dll" />
-    <customAssembly location="Microsoft.AspNet.SignalR.Core.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="..\packages\Microsoft.AspNet.SignalR.Core.1.0.1\lib\net40\Microsoft.AspNet.SignalR.Core.dll" />
-    <customAssembly location="Microsoft.AspNet.SignalR.Owin.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="..\packages\Microsoft.AspNet.SignalR.Owin.1.0.1\lib\net40\Microsoft.AspNet.SignalR.Owin.dll" />
-    <customAssembly location="Microsoft.AspNet.SignalR.SystemWeb.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="..\packages\Microsoft.AspNet.SignalR.SystemWeb.1.0.1\lib\net40\Microsoft.AspNet.SignalR.SystemWeb.dll" />
+    <customAssembly location="Microsoft.AspNet.SignalR.Core.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="..\packages\Microsoft.AspNet.SignalR.Core.1.1.2\lib\net40\Microsoft.AspNet.SignalR.Core.dll" />
+    <customAssembly location="Microsoft.AspNet.SignalR.Owin.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="..\packages\Microsoft.AspNet.SignalR.Owin.1.1.2\lib\net45\Microsoft.AspNet.SignalR.Owin.dll" />
+    <customAssembly location="Microsoft.AspNet.SignalR.SystemWeb.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="..\packages\Microsoft.AspNet.SignalR.SystemWeb.1.1.2\lib\net45\Microsoft.AspNet.SignalR.SystemWeb.dll" />
+    <customAssembly location="Microsoft.Owin.Host.SystemWeb.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="..\packages\Microsoft.Owin.Host.SystemWeb.1.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll" />
     <customAssembly location="Microsoft.Web.Infrastructure.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll" />
+    <customAssembly location="Newtonsoft.Json.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="..\packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.dll" />
+    <customAssembly location="Owin.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="..\packages\Owin.1.0\lib\net40\Owin.dll" />
   </assemblies>
   <features>
     <featureReference itemId="cc4134db-9878-478c-9841-ba88bfe14258" />

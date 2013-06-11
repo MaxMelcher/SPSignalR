@@ -15,7 +15,7 @@ namespace MaxMelcher.SPSignalR.EventReceiver.Features.Feature2
     [Guid("fd13f687-6ee7-4cc4-8126-602f8d153a6a")]
     public class Feature2EventReceiver : SPFeatureReceiver
     {
-        private void RegisterHttpModule(SPFeatureReceiverProperties properties)
+        private void RegisterAssembly(SPFeatureReceiverProperties properties)
         {
             SPWebConfigModification webConfigModification = CreateWebModificationObject();
 
@@ -51,7 +51,7 @@ namespace MaxMelcher.SPSignalR.EventReceiver.Features.Feature2
 
         public override void FeatureActivated(SPFeatureReceiverProperties properties)
         {
-            RegisterHttpModule(properties);
+            RegisterAssembly(properties);
         }
 
 

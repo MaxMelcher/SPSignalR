@@ -65,16 +65,12 @@
     <AssemblyOriginatorKeyFile>SPSignalR.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.AspNet.SignalR.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.1.0.1\lib\net40\Microsoft.AspNet.SignalR.Core.dll</HintPath>
+    <Reference Include="Microsoft.AspNet.SignalR.Core, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.1.1.2\lib\net40\Microsoft.AspNet.SignalR.Core.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.SharePoint.WorkflowActions, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL" />
-    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -160,11 +156,12 @@
     <Content Include="Features\WebPart\WebPart.Template.xml">
       <DependentUpon>WebPart.feature</DependentUpon>
     </Content>
+    <Content Include="Layouts\MaxMelcher.SPSignalR.EventReceiverExample\jquery.signalR-1.1.2.min.js" />
     <Content Include="Scripts\jquery-1.6.4-vsdoc.js" />
     <Content Include="Scripts\jquery-1.6.4.js" />
     <Content Include="Layouts\MaxMelcher.SPSignalR.EventReceiverExample\jquery-1.6.4.min.js" />
-    <Content Include="Scripts\jquery.signalR-1.0.1.js" />
-    <Content Include="Layouts\MaxMelcher.SPSignalR.EventReceiverExample\jquery.signalR-1.0.1.min.js" />
+    <Content Include="Scripts\jquery.signalR-1.1.2.js" />
+    <Content Include="Scripts\jquery.signalR-1.1.2.min.js" />
     <Content Include="WebParts\WhatsHappening\Elements.xml" />
     <Content Include="WebParts\WhatsHappening\WhatsHappening.ascx">
       <Generator>SharePointWebPartCodeGenerator</Generator>

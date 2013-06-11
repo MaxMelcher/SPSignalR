@@ -9,7 +9,7 @@
 
 
 <script src="/_layouts/15/MaxMelcher.SPSignalR.EventReceiverExample/jquery-1.6.4.min.js"></script>
-<script src="/_layouts/15/MaxMelcher.SPSignalR.EventReceiverExample/jquery.signalR-1.0.1.min.js"></script>
+<script src="/_layouts/15/MaxMelcher.SPSignalR.EventReceiverExample/jquery.signalR-1.1.2.min.js"></script>
 <script src="/signalr/hubs" type="text/javascript"></script>
 
 <h2>What's happening?</h2>
